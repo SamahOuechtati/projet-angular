@@ -1,0 +1,42 @@
+
+<!-- <div>
+    <input type="text" [(ngModel)]="nom">
+    <button type="button" (click)="searchCandidat()">Chercher</button>
+
+    <div *ngIf="candidat != null">	Nom : {{candidat.nom}} <br>
+		Prenom : {{candidat.prenom}} <br>
+		Dateentretien : {{candidat.dateEntretien}} <br>
+		Etat : {{candidat.etat}} <br>
+	</div>
+</div> -->
+<br>
+<table border="1">
+	<tr>
+		<td>Nom</td>
+		<td>Prenom</td>
+		<td>Dateentretien</td>
+		<td>Etat</td>
+		<td>Actions</td>
+	</tr>
+	<tr *ngFor="let candidat of candidats" [style.background-color]="candidat.etat==1 ? 'green' : 'red'">
+		<td>{{candidat.nom}}</td>
+		<td>{{candidat.prenom}}</td>
+		<td>{{candidat.dateEntretien}}</td>
+		<td>{{candidat.etat}}</td>
+		<td>
+			<button *ngIf="candidat.etat == 1" type="button" (click)="changerEtat(candidat)">Desaffecter</button>
+			<button *ngIf="candidat.etat == 0" type="button" (click)="changerEtat(candidat)">Affecter</button>
+			<!-- <button type="button" (click)="details(candidat)">Details</button> 
+			<button type="button" (click)="edit(candidat)">Edit</button>
+			<button type="button" (click)="deleteCandidat(candidat)">Delete</button> -->
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<button type="button" (click)="calculer()">Calculer</button>
+<div *ngIf="display == true">
+	<p>Candidats affectés    : {{result.affecter}}</p>
+	<p>Candidats désaffectés : {{result.desaffecter}}</p>
+</div>

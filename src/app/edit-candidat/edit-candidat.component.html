@@ -1,0 +1,40 @@
+
+<form (ngSubmit)="saveCandidat()" #formCandidat="ngForm">
+	<div>
+		<label>Nom</label><br>
+		<input type="text" [(ngModel)]="candidat.nom" name="nom" #nom="ngModel" required/>
+		<div *ngIf="nom.invalid && nom.touched"> 
+			<div *ngIf="nom.errors!['required']">
+				La Nom est obligatoire
+			</div>
+  		</div>
+	</div>
+	<div>
+		<label>Prenom</label><br>
+		<input type="text" [(ngModel)]="candidat.prenom" name="prenom" #prenom="ngModel" required/>
+		<div *ngIf="prenom.invalid && prenom.touched"> 
+			<div *ngIf="prenom.errors!['required']">
+				La Prenom est obligatoire
+			</div>
+  		</div>
+	</div>
+	<div>
+		<label>Dateentretien</label><br>
+		<input type="text" [(ngModel)]="candidat.dateEntretien" name="dateEntretien" #dateEntretien="ngModel" required/>
+		<div *ngIf="dateEntretien.invalid && dateEntretien.touched"> 
+			<div *ngIf="dateEntretien.errors!['required']">
+				La Dateentretien est obligatoire
+			</div>
+  		</div>
+	</div>
+	<div>
+		<label>Etat</label><br>
+		<input type="number" [(ngModel)]="candidat.etat" name="etat" #etat="ngModel" required/>
+		<div *ngIf="etat.invalid && etat.touched"> 
+			<div *ngIf="etat.errors!['required']">
+				La Etat est obligatoire
+			</div>
+  		</div>
+	</div>
+	<button type="submit" [disabled]="formCandidat.invalid">Save</button>
+</form>

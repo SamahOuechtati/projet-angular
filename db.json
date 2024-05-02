@@ -1,0 +1,32 @@
+{
+  "candidats": [
+    {
+      "id": 1,
+      "nom": "Oussama",
+      "prenom": "Mkaddem",
+      "dateEntretien": "13/09/2022",
+      "etat": 1
+    },
+    {
+      "id": 2,
+      "nom": "Aman",
+      "prenom": "Boyka",
+      "dateEntretien": "13/10/2018",
+      "etat": 0
+    },
+    {
+      "id": 3,
+      "nom": "Haykel",
+      "prenom": "Ferjani",
+      "dateEntretien": "15/01/2020",
+      "etat": 0
+    },
+    {
+      "etat": 1,
+      "nom": "Samah",
+      "prenom": "sameh",
+      "dateEntretien": "2024-05-02",
+      "id": 4
+    }
+  ]
+}
